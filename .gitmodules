@@ -1,0 +1,3 @@
+[submodule "brain-parcellation"]
+	path = brain-parcellation
+	url = https://github.com/adbrebs/brain-parcellation.git
