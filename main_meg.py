@@ -4,8 +4,8 @@ import sys
 import ConfigParser
 
 from databasemeg import DataBaseMEG
-import nn
-from trainer import Trainer
+import brain.nn as nn
+from brain.trainer import Trainer
 
 
 def load_config():

@@ -1,6 +1,6 @@
 __author__ = 'adeb'
 
-from database import DataBase
+from brain.database import DataBase
 from datasetmeg import DatasetMEG
 
 
