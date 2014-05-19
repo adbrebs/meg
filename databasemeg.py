@@ -9,8 +9,12 @@ class DataBaseMEG(DataBase):
     def __init__(self):
         DataBase.__init__(self)
 
+    def load_from(self, file_name):
+
+        print '... loading data ' + file_name
+
         ds = DatasetMEG()
-        ds.generate()
+        ds.read(file_name)
 
         self.n_out_features = ds.n_out_features
         self.n_data = ds.n_data

@@ -4,7 +4,7 @@ import os
 import numpy as np
 from scipy.io import loadmat
 
-from dataset import Dataset
+from brain.dataset import Dataset
 
 
 class DatasetMEG(Dataset):
@@ -15,7 +15,7 @@ class DatasetMEG(Dataset):
 
     def generate(self):
 
-        subjects_train = range(1, 6)  # use range(1, 17) for all subjects
+        subjects_train = range(1, 16)  # use range(1, 17) for all subjects
 
         # We throw away all the MEG data outside the first 0.5sec from when
         # the visual stimulus start:
@@ -93,6 +93,8 @@ class DatasetMEG(Dataset):
         self.n_time_series = int(h5file.attrs["n_time_series"])
         self.len_time_series = int(h5file.attrs["len_time_series"])
 
+
 if __name__ == '__main__':
     ds = DatasetMEG()
+    ds.generate()
     ds.write("data_meg.h5")
