@@ -22,16 +22,17 @@ if __name__ == '__main__':
     training_cf = load_config()
 
     db = DataBaseMEG()
-    db.load_from("data_meg.h5")
+    db.load_from("train_meg.h5")
 
     ### Create the network
     # MLP kind network
-    net = nn.Network1(db.n_in_features, db.n_out_features)
+    net = nn.Network1()
+    net.init(db.n_in_features, db.n_out_features)
     # CNN network
     # net = nn.Network2(db.patch_width, db.n_out_features)
 
     ### Train the network
-    t = Trainer(training_cf, net, db)
+    t = Trainer(training_cf, net, db, False)
     t.train()
 
     ### Save the network
